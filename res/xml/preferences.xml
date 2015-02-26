@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <ListPreference
+        android:defaultValue="@integer/defaultFontSize"
+        android:dialogTitle="@string/font_size_title"
+        android:entries="@array/fontSizeTextsArray"
+        android:entryValues="@array/fontSizeTextsArray"
+        android:key="pref_font_size"
+        android:title="@string/font_size_title" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_text_suggestion"
+        android:title="@string/pref_text_suggestion_title" />
+    
+</PreferenceScreen>

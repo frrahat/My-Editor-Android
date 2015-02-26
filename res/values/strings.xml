@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My Editor</string>
+    
+    <string name="action_settings">Settings</string>
+    <string name="action_readMode">Read Mode</string>
+    <string name="action_addCurrentTime">Add Current Time</string>
+    <string name="action_hideSoftKeyBoard">Hide KeyBoard</string>
+    <string name="action_restoreBack">Restore Back</string>
+    <string name="action_deleteSelection">Delete Selection</string>
+    <string name="action_copySelection">Copy Selection</string>
+    <string name="action_copyAll">Copy All</string>
+    <string name="action_paste">Paste</string>
+    <string name="action_openFile">Open</string>
+    <string name="action_saveFile">Save</string>
+    <string name="action_saveAs">Save As</string>
+    <string name="action_clearText">CLEAR Text</string>
+    
+    <string name="button_text_read">Go To Read Mode</string>
+    <string name="button_text_write">Go To Write Mode</string>
+
+    <string name="copyButtonText">Copy</string>
+    <string name="buttonLeftText">left</string>
+    <string name="buttonRightText">right</string>
+    <string name="font_size_title">Font Size</string>
+    <string name="title_activity_settings">Settings</string>
+    
+    <string name="title_exitEditor_exit">Exiting Editor</string>
+    <string name="text_exit_confirmation">Are you sure you want to Exit?</string>
+    <string name="title_replaceDialog">File with similar name found</string>
+    <string name="text_replace_confirmation">Do you want to replace?</string>
+        
+    <string name="fileNameHint">foo.txt</string>
+    <string name="fileNamePickerMessage">Enter file name:</string>
+    <string name="fileNamePickerTitle">Enter File Name</string>
+    <string name="fileNamePickerOk">Save</string>
+    <string name="fileNamePickerCancel">Cancel</string>
+    
+    <string name="pref_text_suggestion_title">Enable Text Suggestion</string>
+    <string name="defaultFontSizeAsString">10</string>
+    <string-array name="fontSizeTextsArray">
+        <!--
+	    <item >0</item>
+	    <item >1</item>
+	    <item >2</item>
+	    <item >3</item>
+	    <item >4</item>
+	    <item >5</item>-->
+	    <item >6</item>
+	    <item >7</item>
+	    <item >8</item>
+	    <item >9</item>
+	    <item >10</item>
+	    <item >11</item>
+	    <item >12</item>
+	    <item >13</item>
+	    <item >14</item>
+	    <item >15</item>
+	    <item >16</item>
+	    <item >17</item>
+	    <item >18</item>
+	    <item >19</item>
+	    <item >20</item>
+	    <item >21</item>
+	    <item >22</item>
+	    <item >23</item>
+	    <item >24</item>
+	    <item >25</item>
+	    <item >26</item>
+	    <item >27</item>
+	    <item >28</item>
+	    <item >29</item>
+		<item >30</item>
+	    <item >31</item>
+	    <item >32</item>
+	    <item >33</item>
+	    <item >34</item>
+	    <item >35</item>
+	    <item >36</item>
+	    <item >37</item>
+	    <item >38</item>
+	    <item >39</item>
+	    <item >40</item>
+	    <item >41</item>
+	    <item >42</item>
+	    <item >43</item>
+	    <item >44</item>
+	    <item >45</item>
+	    <item >46</item>
+	    <item >47</item>
+	    <item >48</item>
+	    <item >49</item>
+		<item >50</item>
+    </string-array>
+
+</resources>

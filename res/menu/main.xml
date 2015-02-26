@@ -1,0 +1,64 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.Rahat.myEditor.MainActivity" >
+
+    
+   	<item
+        android:id="@+id/action_readMode"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_readMode"/><item android:id="@+id/action_hideSoftKeyBoard" android:orderInCategory="100" android:showAsAction="never" android:title="@string/action_hideSoftKeyBoard" />
+   	
+    <item
+        android:id="@+id/action_addCurrentTime"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_addCurrentTime"/>
+    
+   	<item
+        android:id="@+id/action_restoreBack"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_restoreBack"/>
+   	<item
+        android:id="@+id/action_deleteSelection"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_deleteSelection"/>
+   	<item
+        android:id="@+id/action_copySelection"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_copySelection"/>
+   	<item
+        android:id="@+id/action_copyAll"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_copyAll"/>
+   	<item
+        android:id="@+id/action_paste"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_paste"/>
+   	
+   	<item android:id="@+id/action_clearText" android:orderInCategory="100" android:showAsAction="never" android:title="@string/action_clearText" /><item
+        android:id="@+id/action_openFile"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_openFile"/>
+   	
+   	<item
+        android:id="@+id/action_saveFile"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_saveFile"/>
+   	
+   	<item
+        android:id="@+id/action_saveAs"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_saveAs"/>
+   	
+   	<item android:id="@+id/action_settings" android:orderInCategory="100" android:showAsAction="never" android:title="@string/action_settings" />
+
+</menu>
