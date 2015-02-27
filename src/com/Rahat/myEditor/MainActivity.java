@@ -412,7 +412,7 @@ public class MainActivity extends Activity {
 		ClipData.Item item = clip.getItemAt(0);
 		String text = item.getText().toString();
 
-		editText.append(text);
+		insertString(text);
 		
 		Toast.makeText(getApplicationContext(), "Text Pasted",
 				Toast.LENGTH_SHORT).show();
@@ -586,6 +586,21 @@ public class MainActivity extends Activity {
 	private void addCurrentTime()
 	{
 		Date date=new Date();
-		editText.append(DateFormat.format("dd/MMM/yyyy (E) hh:mm:ss a", date)+"\n");
+		String dateText=DateFormat.format("dd/MMM/yyyy (E) hh:mm:ss a", date).toString();		
+		
+		insertString(dateText);
+	}
+	
+	private void insertString(String text)
+	{
+		int cursorPos=editText.getSelectionStart();
+		String mainText=editText.getText().toString();
+		String subStringFirst=mainText.substring(0, cursorPos);
+		String subStringLast=mainText.substring(cursorPos,
+				mainText.length());
+		
+		editText.setText(subStringFirst+text+subStringLast);
+		//move cursor to the last of the inserted text
+		editText.setSelection(cursorPos+text.length());
 	}
 }
