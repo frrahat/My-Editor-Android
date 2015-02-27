@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
 	
 	private SharedPreferences sharedPrefs;
 	
-	private final String storageFolderName="My Editor Files";
+	public static final String storageFolderName="My Editor Files";
 	private FileNamePicker fileNamePickerDialog;
 	
 	private File currentOpenedFile;
@@ -84,7 +84,13 @@ public class MainActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    super.onActivityResult(requestCode, resultCode, data);
 	    
-	    updateFromPrefs();
+	    //settings activity request code was 0
+	    if(requestCode==0){
+	    	updateFromPrefs();
+	    }
+	    else if(requestCode==1 && resultCode==RESULT_OK){
+	    	openFile(data.getStringExtra("fileName"));
+	    }
 	}
 	
 	@Override
@@ -191,7 +197,8 @@ public class MainActivity extends Activity {
 		}
 		
 		else if(id==R.id.action_openFile){
-			Toast.makeText(this, "Not available in this version", Toast.LENGTH_SHORT).show();
+			Intent intent=new Intent(getBaseContext(), FileListActivity.class);
+			startActivityForResult(intent, 1);
 			return true;
 		}
 		
@@ -602,5 +609,25 @@ public class MainActivity extends Activity {
 		editText.setText(subStringFirst+text+subStringLast);
 		//move cursor to the last of the inserted text
 		editText.setSelection(cursorPos+text.length());
+	}
+	
+	private void openFile(String fileName)
+	{
+		//Toast.makeText(this, "Not available in this version", Toast.LENGTH_SHORT).show();
+        
+		File root = Environment.getExternalStorageDirectory();
+        File dir = new File(root.getAbsolutePath() + "/"+storageFolderName);
+		
+        try {
+			File file = new File(dir,fileName);
+			InputStream in=new FileInputStream(file);
+			
+			readFile(in);
+			currentOpenedFile=file;
+			
+		}catch (IOException ie){
+			Toast.makeText(this,"Can't read file " + ie.getMessage(),
+					Toast.LENGTH_LONG).show(); 			
+		}
 	}
 }
