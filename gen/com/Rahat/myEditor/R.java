@@ -26,30 +26,38 @@ public final class R {
     }
     public static final class drawable {
         public static final int cursor_color=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int scrollbar_thumb=0x7f020002;
-        public static final int scrollbar_track=0x7f020003;
+        public static final int file=0x7f020001;
+        public static final int folder=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int scrollbar_thumb=0x7f020004;
+        public static final int scrollbar_track=0x7f020005;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f0b0000;
-        public static final int action_addCurrentTime=0x7f0b0008;
-        public static final int action_clearText=0x7f0b000e;
-        public static final int action_copyAll=0x7f0b000c;
-        public static final int action_copySelection=0x7f0b000b;
-        public static final int action_deleteSelection=0x7f0b000a;
-        public static final int action_hideSoftKeyBoard=0x7f0b0007;
+        public static final int LinearLayout1=0x7f0b0001;
+        public static final int action_addCurrentTime=0x7f0b000e;
+        public static final int action_clearText=0x7f0b0017;
+        public static final int action_copyAll=0x7f0b0015;
+        public static final int action_copySelection=0x7f0b0014;
+        public static final int action_deleteSelection=0x7f0b0013;
         public static final int action_openFile=0x7f0b000f;
-        public static final int action_paste=0x7f0b000d;
-        public static final int action_readMode=0x7f0b0006;
-        public static final int action_restoreBack=0x7f0b0009;
+        public static final int action_paste=0x7f0b0016;
+        public static final int action_readMode=0x7f0b000d;
+        public static final int action_restoreBack=0x7f0b0012;
         public static final int action_saveAs=0x7f0b0011;
         public static final int action_saveFile=0x7f0b0010;
-        public static final int action_settings=0x7f0b0012;
-        public static final int button=0x7f0b0003;
-        public static final int editText=0x7f0b0002;
-        public static final int fileNameEditText=0x7f0b0005;
-        public static final int scrollView=0x7f0b0001;
-        public static final int textView1=0x7f0b0004;
+        public static final int action_settings=0x7f0b0018;
+        public static final int button=0x7f0b0004;
+        public static final int button_back=0x7f0b0008;
+        public static final int button_cancel=0x7f0b0007;
+        public static final int editText=0x7f0b0003;
+        public static final int fileNameEditText=0x7f0b000a;
+        public static final int imageView_fileBrowse=0x7f0b000b;
+        public static final int listView_file_names=0x7f0b0006;
+        public static final int nameLabel=0x7f0b0000;
+        public static final int scrollView=0x7f0b0002;
+        public static final int textView1=0x7f0b0009;
+        public static final int textView_fileChooser=0x7f0b0005;
+        public static final int textView_fileName=0x7f0b000c;
     }
     public static final class integer {
         public static final int defaultFontSize=0x7f060002;
@@ -57,12 +65,16 @@ public final class R {
         public static final int minFontSize=0x7f060000;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int dialog_file_name_picker=0x7f030001;
+        public static final int activity_file_list=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int dialog_file_chooser=0x7f030002;
+        public static final int dialog_file_name_picker=0x7f030003;
+        public static final int file_chooser_list_item=0x7f030004;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
-        public static final int settings=0x7f0a0001;
+        public static final int file_list=0x7f0a0000;
+        public static final int main=0x7f0a0001;
+        public static final int settings=0x7f0a0002;
     }
     public static final class string {
         public static final int action_addCurrentTime=0x7f070003;
@@ -94,7 +106,9 @@ public final class R {
         public static final int pref_text_suggestion_title=0x7f07001e;
         public static final int text_exit_confirmation=0x7f070016;
         public static final int text_replace_confirmation=0x7f070018;
+        public static final int title_activity_file_list=0x7f070020;
         public static final int title_activity_settings=0x7f070014;
+        public static final int title_dialog_file_chooser=0x7f070021;
         public static final int title_exitEditor_exit=0x7f070015;
         public static final int title_replaceDialog=0x7f070017;
     }

@@ -52,10 +52,11 @@ public class MainActivity extends Activity {
 	
 	private SharedPreferences sharedPrefs;
 	
-	private final String storageFolderName="My Editor Files";
+	public static final String storageFolderName="My Editor Files";
 	private FileNamePicker fileNamePickerDialog;
 	
 	private File currentOpenedFile;
+	private FileChooserDialog fileChooserDialog;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +85,10 @@ public class MainActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    super.onActivityResult(requestCode, resultCode, data);
 	    
-	    updateFromPrefs();
+	    //settings activity request code was 0
+	    if(requestCode==0){
+	    	updateFromPrefs();
+	    }
 	}
 	
 	@Override
@@ -120,51 +124,28 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		
-		else if(id==R.id.action_readMode) {
-			if(!isInReadMode){
-				hideSoftKeyBoard();
-				goToReadMode();
+		if(id==R.id.action_openFile){
+			
+			if(fileChooserDialog==null){
+				
+				fileChooserDialog=new FileChooserDialog();
+				
+				fileChooserDialog.setOnFileChosenListener(
+						new FileChooserDialog.OnFileChosenListener() {
+					
+					@Override
+					public void onFileChosen(File file) {
+						openFile(file);
+					}
+				});
 			}
+			
+			fileChooserDialog.show(getFragmentManager(), "fileChooser");
+			
 			return true;
 		}
 		
-		else if(id==R.id.action_hideSoftKeyBoard)
-		{
-			hideSoftKeyBoard();
-			return true;
-		}
-		
-		else if(id==R.id.action_restoreBack)
-		{
-			restoreBack();
-			return true;
-		}
-		
-		else if(id==R.id.action_deleteSelection)
-		{
-			deleteSelection();
-			return true;
-		}
-		
-		else if(id==R.id.action_copySelection)
-		{
-			copySelection();
-			return true;
-		}
-		
-		else if(id==R.id.action_copyAll) {
-			copyAllToClipBoard();
-			return true;
-		}
-		
-		else if(id==R.id.action_paste) {
-			//storing backUp
-			backUpString=editText.getText().toString();
-			pasteFromClipBoard();
-			return true;
-		}
-		
-		else if(id==R.id.action_saveFile){
+		if(id==R.id.action_saveFile){
 			if(currentOpenedFile!=null){
 				writeToFile(currentOpenedFile);
 			}
@@ -173,25 +154,58 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		
-		else if(id==R.id.action_saveAs){
+		if(id==R.id.action_saveAs){
 			saveFile();
 			return true;
 		}
 		
-		else if(id==R.id.action_clearText){
+		if(id==R.id.action_readMode) {
+			if(!isInReadMode){
+				hideSoftKeyBoard();
+				goToReadMode();
+			}
+			return true;
+		}
+		
+		if(id==R.id.action_restoreBack)
+		{
+			restoreBack();
+			return true;
+		}
+		
+		if(id==R.id.action_deleteSelection)
+		{
+			deleteSelection();
+			return true;
+		}
+		
+		if(id==R.id.action_copySelection)
+		{
+			copySelection();
+			return true;
+		}
+		
+		if(id==R.id.action_copyAll) {
+			copyAllToClipBoard();
+			return true;
+		}
+		
+		if(id==R.id.action_paste) {
+			//storing backUp
+			backUpString=editText.getText().toString();
+			pasteFromClipBoard();
+			return true;
+		}
+		
+		if(id==R.id.action_clearText){
 			//storing backUp
 			backUpString=editText.getText().toString();
 			clearText();
 			return true;
 		}
 		
-		else if(id==R.id.action_addCurrentTime){
+		if(id==R.id.action_addCurrentTime){
 			addCurrentTime();
-			return true;
-		}
-		
-		else if(id==R.id.action_openFile){
-			Toast.makeText(this, "Not available in this version", Toast.LENGTH_SHORT).show();
 			return true;
 		}
 		
@@ -412,7 +426,7 @@ public class MainActivity extends Activity {
 		ClipData.Item item = clip.getItemAt(0);
 		String text = item.getText().toString();
 
-		editText.append(text);
+		insertString(text);
 		
 		Toast.makeText(getApplicationContext(), "Text Pasted",
 				Toast.LENGTH_SHORT).show();
@@ -498,6 +512,7 @@ public class MainActivity extends Activity {
 	    }
 		
 		showFileNamePickerDialog();
+		fileChooserDialog=null;//to initiate filechooser dialog again with new file
 
 	}
 	
@@ -586,6 +601,36 @@ public class MainActivity extends Activity {
 	private void addCurrentTime()
 	{
 		Date date=new Date();
-		editText.append(DateFormat.format("dd/MMM/yyyy (E) hh:mm:ss a", date)+"\n");
+		String dateText=DateFormat.format("dd/MMM/yyyy (E) hh:mm:ss a", date).toString();		
+		
+		insertString(dateText);
+	}
+	
+	private void insertString(String text)
+	{
+		int cursorPos=editText.getSelectionStart();
+		String mainText=editText.getText().toString();
+		String subStringFirst=mainText.substring(0, cursorPos);
+		String subStringLast=mainText.substring(cursorPos,
+				mainText.length());
+		
+		editText.setText(subStringFirst+text+subStringLast);
+		//move cursor to the last of the inserted text
+		editText.setSelection(cursorPos+text.length());
+	}
+	
+	private void openFile(File file)
+	{
+		
+        try {
+			InputStream in=new FileInputStream(file);
+			
+			readFile(in);
+			currentOpenedFile=file;
+			
+		}catch (IOException ie){
+			Toast.makeText(this,"Can't read file " + ie.getMessage(),
+					Toast.LENGTH_LONG).show(); 			
+		}
 	}
 }

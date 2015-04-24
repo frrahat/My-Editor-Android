@@ -7,13 +7,33 @@
         android:id="@+id/action_readMode"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_readMode"/><item android:id="@+id/action_hideSoftKeyBoard" android:orderInCategory="100" android:showAsAction="never" android:title="@string/action_hideSoftKeyBoard" />
+        android:title="@string/action_readMode"/>
    	
     <item
         android:id="@+id/action_addCurrentTime"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_addCurrentTime"/>
+    
+       	
+   	<item
+        android:id="@+id/action_openFile"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_openFile"/>
+   	
+   	<item
+        android:id="@+id/action_saveFile"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_saveFile"/>
+   	
+   	<item
+        android:id="@+id/action_saveAs"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_saveAs"/>
+   	
     
    	<item
         android:id="@+id/action_restoreBack"
@@ -41,24 +61,11 @@
         android:showAsAction="never"
         android:title="@string/action_paste"/>
    	
-   	<item android:id="@+id/action_clearText" android:orderInCategory="100" android:showAsAction="never" android:title="@string/action_clearText" /><item
-        android:id="@+id/action_openFile"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_openFile"/>
-   	
-   	<item
-        android:id="@+id/action_saveFile"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_saveFile"/>
-   	
-   	<item
-        android:id="@+id/action_saveAs"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_saveAs"/>
-   	
+   	<item android:id="@+id/action_clearText" 
+   	    android:orderInCategory="100" 
+   	    android:showAsAction="never" 
+   	    android:title="@string/action_clearText" />
+   	   	
    	<item android:id="@+id/action_settings" android:orderInCategory="100" android:showAsAction="never" android:title="@string/action_settings" />
 
 </menu>
