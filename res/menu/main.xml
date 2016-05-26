@@ -19,14 +19,16 @@
    	<item
         android:id="@+id/action_openFile"
         android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_openFile"/>
+        android:showAsAction="ifRoom"
+        android:title="@string/action_openFile"
+        android:icon="@drawable/ic_launcher_folder_small"/>
    	
    	<item
         android:id="@+id/action_saveFile"
         android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_saveFile"/>
+        android:showAsAction="ifRoom"
+        android:title="@string/action_saveFile"
+        android:icon="@drawable/ic_menu_save"/>
    	
    	<item
         android:id="@+id/action_saveAs"
@@ -48,8 +50,9 @@
    	<item
         android:id="@+id/action_copySelection"
         android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_copySelection"/>
+        android:showAsAction="ifRoom"
+        android:title="@string/action_copySelection"
+        android:icon="@drawable/ic_menu_copy_holo_dark"/>
    	<item
         android:id="@+id/action_copyAll"
         android:orderInCategory="100"
@@ -66,6 +69,19 @@
    	    android:showAsAction="never" 
    	    android:title="@string/action_clearText" />
    	   	
-   	<item android:id="@+id/action_settings" android:orderInCategory="100" android:showAsAction="never" android:title="@string/action_settings" />
+   	<item android:id="@+id/action_settings" 
+   	    android:orderInCategory="100" 
+   	    android:showAsAction="never" 
+   	    android:title="@string/action_settings" />
+   	
+   	<item android:id="@+id/action_encode" 
+   	    android:orderInCategory="100" 
+   	    android:showAsAction="never" 
+   	    android:title="@string/action_encode" />
+   	
+   	<item android:id="@+id/action_decode" 
+   	    android:orderInCategory="100" 
+   	    android:showAsAction="never" 
+   	    android:title="@string/action_decode" />
 
 </menu>
